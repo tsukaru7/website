@@ -1,0 +1,16 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+# Static site: no build step, the repository root is served as-is.
+services:
+  - type: web
+    name: ce-site-te-regarde
+    runtime: static
+    buildCommand: echo "Aucun build : tout est déjà prêt."
+    staticPublishPath: .
+    pullRequestPreviewsEnabled: true
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin

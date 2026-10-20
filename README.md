@@ -30,10 +30,19 @@ python3 -m http.server 8000
 # puis http://localhost:8000
 ```
 
-## Mettre en ligne (GitHub Pages)
+## Mettre en ligne sur Render
 
-Settings → Pages → *Deploy from a branch* → choisir la branche et le dossier `/ (root)`.
-Le site est 100 % statique, il marche aussi tel quel sur Netlify, Vercel ou Cloudflare Pages.
+Le fichier `render.yaml` décrit tout le déploiement (site statique, aucun build).
+
+1. Crée un compte sur [render.com](https://render.com) et connecte ton GitHub.
+2. **New → Blueprint**, choisis ce dépôt et la branche à déployer.
+3. **Apply**. Une minute plus tard, le site est en ligne sur `https://ce-site-te-regarde.onrender.com`
+   (ou une adresse proche si ce nom est déjà pris).
+
+Chaque `git push` sur la branche redéploie automatiquement. Un nom de domaine perso
+s'ajoute dans *Settings → Custom Domains*.
+
+Le site est 100 % statique : il marche aussi tel quel sur GitHub Pages, Netlify, Vercel ou Cloudflare Pages.
 
 ## Structure
 
