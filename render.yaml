@@ -4,7 +4,7 @@ services:
   - type: web
     name: ce-site-te-regarde
     runtime: static
-    buildCommand: echo "Aucun build : tout est déjà prêt."
+    buildCommand: "echo no-build-needed"
     staticPublishPath: .
     pullRequestPreviewsEnabled: true
     headers:
