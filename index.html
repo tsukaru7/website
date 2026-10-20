@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ce site te regarde</title>
+  <meta name="description" content="Un site vivant. Il te voit, il te suit, il se souvient de toi.">
+  <meta property="og:title" content="Ce site te regarde">
+  <meta property="og:description" content="Un site vivant. Il te voit, il te suit, il se souvient de toi.">
+  <meta name="theme-color" content="#050308">
+  <link rel="icon" id="favicon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M4 32Q32 4 60 32Q32 60 4 32Z' fill='%23fff'/%3E%3Ccircle cx='32' cy='32' r='11' fill='%23ff4f8b'/%3E%3Ccircle cx='32' cy='32' r='5'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Unbounded:wght@400;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <div id="intro" role="dialog" aria-label="Introduction">
+    <div class="intro-inner">
+      <pre id="intro-text" aria-live="polite"></pre>
+      <button id="enter" hidden>[ ouvrir l'œil ]</button>
+    </div>
+    <p class="intro-hint">casque recommandé · clique pour accélérer</p>
+  </div>
+
+  <div id="cursor" aria-hidden="true"></div>
+  <button id="mute" class="chip" aria-pressed="false">son : on</button>
+  <nav id="hud" aria-hidden="true"><span id="hud-index">01</span><span id="hud-name">L'œil</span></nav>
+  <div id="toast" role="status"></div>
+
+  <main>
+    <section id="s-eye" class="act" data-name="L'œil">
+      <canvas id="eye"></canvas>
+      <div class="act-text">
+        <h1 class="title">Ce site<br>te regarde.</h1>
+        <p class="sub" id="eye-sub">Bouge. Il te suit.</p>
+      </div>
+      <div class="scroll-hint">descends ↓</div>
+    </section>
+
+    <section id="s-matter" class="act" data-name="La matière">
+      <canvas id="matter"></canvas>
+      <p class="act-label"><b>02</b> La matière — passe ta main dedans. Clique pour tout faire exploser.</p>
+    </section>
+
+    <section id="s-life" class="act" data-name="Le vivant">
+      <canvas id="life"></canvas>
+      <p class="act-label"><b>03</b> Le vivant — ton passage sème des colonies. Équations de Gray-Scott, résolues sur ta carte graphique.</p>
+      <div class="life-ui">
+        <button id="life-preset" class="chip">espèce : corail</button>
+        <button id="life-reset" class="chip">stériliser</button>
+      </div>
+    </section>
+
+    <section id="s-sound" class="act" data-name="Le son">
+      <canvas id="sound"></canvas>
+      <p class="act-label"><b>04</b> Le son — ton curseur est un instrument. Gauche → droite : la note. Haut → bas : la lumière. Si tu ne joues pas, je jouerai.</p>
+    </section>
+
+    <section id="s-memory" class="act memory" data-name="La mémoire">
+      <div class="memory-inner">
+        <p class="kicker"><b>05</b> La mémoire</p>
+        <h2>Je me souviens<br>de toi.</h2>
+        <ul id="stats"></ul>
+        <p class="goodbye">Maintenant, change d'onglet.<br><span>Je saurai.</span></p>
+        <details class="hood">
+          <summary>sous le capot</summary>
+          <ul>
+            <li>Œil : lancer de rayons analytique + iris procédural en GLSL, 0 image.</li>
+            <li>Matière : <span id="hood-particles">—</span> particules simulées en JavaScript pur, rendues pixel par pixel.</li>
+            <li>Vivant : système de réaction-diffusion de Gray-Scott, ping-pong de textures flottantes WebGL2.</li>
+            <li>Son : synthétiseur Web Audio, réverbération par convolution générée à la volée.</li>
+            <li>Mémoire : rien ne quitte ton navigateur. Tout est dans ton localStorage.</li>
+            <li>0 dépendance · 0 framework · <span id="hood-fps">—</span> images/seconde.</li>
+          </ul>
+        </details>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
