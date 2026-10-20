@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Singularité</title>
+  <meta name="description" content="Un trou noir calculé en temps réel dans ton navigateur, avec la relativité générale d'Einstein.">
+  <meta property="og:title" content="Singularité">
+  <meta property="og:description" content="Un trou noir calculé en temps réel dans ton navigateur, avec la relativité générale d'Einstein.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cellipse cx='32' cy='34' rx='30' ry='7' fill='%23ffb070'/%3E%3Ccircle cx='32' cy='32' r='13' fill='%23ffd9a0'/%3E%3Ccircle cx='32' cy='32' r='11'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Unbounded:wght@400;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="main.js"></script>
+</head>
+<body>
+  <canvas id="gl"></canvas>
+  <canvas id="overlay" aria-hidden="true"></canvas>
+
+  <div id="intro">
+    <div class="intro-inner">
+      <p class="kicker">singularité</p>
+      <div id="intro-text" aria-live="polite"></div>
+      <button id="enter" class="btn big" hidden>[ entrer ]</button>
+      <p id="loading">compilation de l'espace-temps…</p>
+    </div>
+  </div>
+
+  <div id="hud" aria-hidden="true">
+    <div class="hud-title">SINGULARITÉ <span>M = 10<sup>8</sup> M☉</span></div>
+    <dl>
+      <dt>distance</dt><dd id="h-r">—</dd>
+      <dt>dilatation du temps</dt><dd id="h-dil">—</dd>
+      <dt>ombre apparente</dt><dd id="h-shadow">—</dd>
+      <dt>ton temps</dt><dd id="h-me">—</dd>
+      <dt>temps sur Terre</dt><dd id="h-earth">—</dd>
+      <dt>rayons</dt><dd id="h-rays">—</dd>
+    </dl>
+  </div>
+
+  <div id="controls">
+    <button id="b-dive" class="btn">plonger</button>
+    <button id="b-doppler" class="btn" aria-pressed="true">physique : réaliste</button>
+    <button id="b-twin" class="btn">invoquer une jumelle</button>
+    <button id="b-sound" class="btn" aria-pressed="false">son : on</button>
+    <a href="../" class="btn">← l'œil</a>
+  </div>
+
+  <p id="hint">glisse pour tourner · molette ou pincement pour approcher</p>
+  <div id="caption" role="status"></div>
+</body>
+</html>

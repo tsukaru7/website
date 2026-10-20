@@ -14,6 +14,23 @@ Zéro dépendance, zéro framework, zéro image : tout est calculé en direct, d
 | 4 | **Le son** | Ton curseur joue une gamme pentatonique. Si tu arrêtes, le site joue tout seul. | Synthé Web Audio, réverbération par convolution générée, delay, analyseur de spectre |
 | 5 | **La mémoire** | Tout ce que le site a remarqué : distance parcourue par ta souris (en vrais mètres), clics, notes, clignements, visites. | Statistiques en direct, persistées localement — rien ne quitte ton navigateur |
 
+## Acte 6 — La singularité (`/singularite/`)
+
+Un trou noir de 10⁸ masses solaires calculé en temps réel, avec la relativité générale.
+
+- **Lancer de rayons relativiste** : pour chaque pixel, la trajectoire du photon dans la métrique de
+  Schwarzschild est intégrée à rebours (équation de Binet `u'' + u = 3/2·u²`, Runge-Kutta 4 dans le plan
+  orbital). Les traversées du disque sont trouvées analytiquement, la sortie à l'infini aussi.
+- **Disque d'accrétion** : profil de température de disque mince, effet Doppler relativiste, décalage
+  gravitationnel, couleur de corps noir calculée depuis la loi de Planck et les fonctions colorimétriques CIE 1931.
+- **Lentille gravitationnelle** du ciel (Voie lactée procédurale, étoiles) et d'un panneau de texte géant.
+- **Plongée** jusqu'à l'horizon, en observateur statique : l'ombre envahit le ciel, puis tout l'Univers
+  se comprime dans un cercle décalé vers le bleu. L'horloge de la Terre s'emballe (dilatation du temps).
+- **Jumelle** : une deuxième fenêtre de navigateur contient un second trou noir. Les fenêtres savent où
+  elles sont sur ton écran, un pont de plasma les relie à travers leurs bords, et si tu les superposes
+  elles fusionnent : chirp, onde gravitationnelle, la fenêtre absorbée se ferme.
+- Bloom HDR en cascade de mips, tonemapping ACES, résolution adaptative pour tenir le framerate.
+
 ## Les secrets
 
 - Change d'onglet : le titre et l'icône de l'onglet changent, et l'œil compte ton absence.
@@ -59,4 +76,5 @@ js/life.js        Gray-Scott sur GPU
 js/audio.js       le synthétiseur
 js/sound.js       l'instrument
 js/memory.js      la mémoire
+singularite/      le trou noir (shaders.js = la physique)
 ```
